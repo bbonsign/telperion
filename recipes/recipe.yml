@@ -3,10 +3,10 @@
 # image will be published to ghcr.io/<user>/<name>
 name: telperion
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: Custom image on top of Fedora Sway Atomic.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ghcr.io/wayblueorg/sway
 image-version: 41 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -21,13 +21,18 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
-      - micro
-      - starship
+      - neovim
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - android-tools
+      - gnome-themes-extra
+      - gnome-icon-theme
+      - paper-icon-theme
+      - breeze-icon-theme
+      # - papirus-icon-theme
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -35,8 +40,9 @@ modules:
       # If no repo information is specified, Flathub will be used by default
       install:
         - org.mozilla.firefox
-        - org.gnome.Loupe
+        - com.slack.Slack
       remove:
+        - org.gnome.Loupe
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
 
