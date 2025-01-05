@@ -34,6 +34,14 @@ modules:
       - paper-icon-theme
       # - breeze-icon-theme
       # - papirus-icon-theme
+      - sddm
+      - sddm-themes
+      - sddm-wayland-sway
+
+  - type: systemd
+    system:
+      enabled:
+        - sddm-boot.service
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
