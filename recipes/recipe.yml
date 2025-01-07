@@ -24,7 +24,6 @@ modules:
       - neovim
       - fish
       - vivaldi-stable
-      - akmod-intel-ipu6
     optfix:
       - vivaldi
     remove:
