@@ -20,10 +20,12 @@ modules:
   - type: rpm-ostree
     repos:
       - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
     install:
       - neovim
       - fish
       - vivaldi-stable
+      - ghostty-git
     optfix:
       - vivaldi
     remove:
