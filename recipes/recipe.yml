@@ -23,13 +23,16 @@ modules:
       - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
       - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
     install:
       - docker-ce
       - docker-ce-cli
       - docker-compose-plugin
       - fish
       - ghostty-git
+      - mako
       - neovim
+      - niri
       - tailscale
       - vivaldi-stable
     optfix:
