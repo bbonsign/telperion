@@ -30,7 +30,7 @@ modules:
       - docker-compose-plugin
       - fish
       - ghostty-git
-      - mako
+      # - mako
       - neovim
       - niri
       - tailscale
