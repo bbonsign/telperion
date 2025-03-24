@@ -31,6 +31,7 @@ modules:
       - fish
       # - ghostty-git
       # - mako
+      - nautilus
       - neovim
       - niri
       - tailscale
@@ -51,6 +52,9 @@ modules:
       - sddm
       - sddm-themes
       - sddm-wayland-sway
+      - thunar-archive-plugin
+      - thunar-volman
+      - Thunar
 
   - type: systemd
     system:
