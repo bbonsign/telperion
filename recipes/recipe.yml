@@ -46,6 +46,7 @@ modules:
       - android-tools
       - gnome-themes-extra
       - gnome-icon-theme
+      - mako
       - paper-icon-theme
       # - breeze-icon-theme
       # - papirus-icon-theme
