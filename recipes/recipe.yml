@@ -28,7 +28,7 @@ modules:
       - docker-ce
       - docker-ce-cli
       - docker-compose-plugin
-      - fish
+      # - fish
       # - ghostty-git
       # - mako
       - nautilus
