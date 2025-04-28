@@ -17,44 +17,48 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - https://download.docker.com/linux/fedora/docker-ce.repo
-      - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
-      # - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
-      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
+      files:
+        - https://download.docker.com/linux/fedora/docker-ce.repo
+        - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      copr:
+        # - pgdev/ghostty
+        - hyalter/niri
     install:
-      - docker-ce
-      - docker-ce-cli
-      - docker-compose-plugin
-      # - fish
-      # - ghostty-git
-      # - mako
-      - nautilus
-      - neovim
-      - niri
-      - tailscale
-      - vivaldi-stable
+      packages:
+        - docker-ce
+        - docker-ce-cli
+        - docker-compose-plugin
+        # - fish
+        # - ghostty-git
+        # - mako
+        - nautilus
+        - neovim
+        - niri
+        - tailscale
+        - vivaldi-stable
     optfix:
       - vivaldi
     remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      - android-tools
-      - gnome-themes-extra
-      - gnome-icon-theme
-      - paper-icon-theme
-      # - breeze-icon-theme
-      # - papirus-icon-theme
-      - sddm
-      - sddm-themes
-      - sddm-wayland-sway
-      - thunar-archive-plugin
-      - thunar-volman
-      - Thunar
+      packages:
+        # example: removing firefox (in favor of the flatpak)
+        # "firefox" is the main package, "firefox-langpacks" is a dependency
+        - firefox
+        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - android-tools
+        - gnome-themes-extra
+        - gnome-icon-theme
+        - paper-icon-theme
+        # - breeze-icon-theme
+        # - papirus-icon-theme
+        - sddm
+        - sddm-themes
+        - sddm-wayland-sway
+        - thunar-archive-plugin
+        - thunar-volman
+        - Thunar
 
   - type: systemd
     system:
