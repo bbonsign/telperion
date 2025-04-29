@@ -82,5 +82,9 @@ modules:
     install:
       - 1password # install 1Password (stable) and `op` CLI tool
 
+  - type: containerfile
+    snippets:
+      - RUN mkdir /nix
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
