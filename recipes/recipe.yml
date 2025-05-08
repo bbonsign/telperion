@@ -31,6 +31,7 @@ modules:
         - docker-ce
         - docker-ce-cli
         - docker-compose-plugin
+        - kde-connect
         # - fish
         # - ghostty-git
         # - mako
