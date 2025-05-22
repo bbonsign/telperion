@@ -35,7 +35,8 @@ modules:
         # - fish
         # - ghostty-git
         # - mako
-        - mediawriter
+        # - lxpolkit
+        # - mediawriter
         - nautilus
         - neovim
         - niri
