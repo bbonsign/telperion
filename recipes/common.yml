@@ -1,0 +1,159 @@
+# module configuration, executed in order
+# you can include multiple instances of the same module
+
+- type: files
+  files:
+    - source: system
+      destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+- type: dnf
+  repos:
+    files:
+      - https://download.docker.com/linux/fedora/docker-ce.repo
+      - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      - https://copr.fedorainfracloud.org/coprs/yalter/niri-git/repo/fedora-%OS_VERSION%/yalter-niri-git-fedora-%OS_VERSION%.repo
+    # copr:
+    #   - pgdev/ghostty
+  install:
+    packages:
+      - docker-ce
+      - docker-ce-cli
+      - docker-compose-plugin
+      # - kde-connect
+      # - fish
+      # - ghostty-git
+      # - mako
+      - nautilus
+      - neovim
+      - niri
+      - tailscale
+      - vivaldi-stable
+  optfix:
+    - vivaldi
+  remove:
+    packages:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - android-tools
+      - gnome-themes-extra
+      - gnome-icon-theme
+      - paper-icon-theme
+      # - breeze-icon-theme
+      # - papirus-icon-theme
+      - sddm
+      - sddm-themes
+      - sddm-wayland-sway
+      - thunar-archive-plugin
+      - thunar-volman
+      - Thunar
+
+- type: systemd
+  system:
+    enabled:
+      - docker.service
+      - tailscaled
+      - keyd
+
+- type: default-flatpaks
+  notify: true # Send notification after install/uninstall is finished (true/false)
+  system:
+    # If no repo information is specified, Flathub will be used by default
+    install:
+      - org.mozilla.firefox
+    remove:
+      - org.gnome.Loupe
+      - org.gnome.eog
+  user: {} # Also add Flathub user repo, but no user packages
+
+- type: bling
+  install:
+    - 1password # install 1Password (stable) and `op` CLI tool
+
+- type: containerfile
+  snippets:
+    - RUN mkdir /nix
+
+- type: signing # this sets up the proper policy & signing files for signed images to work fully
+
+# you can include multiple instances of the same module
+modules:
+- type: files
+  files:
+    - source: system
+      destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+- type: dnf
+  repos:
+    files:
+      - https://download.docker.com/linux/fedora/docker-ce.repo
+      - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+      - https://copr.fedorainfracloud.org/coprs/yalter/niri-git/repo/fedora-%OS_VERSION%/yalter-niri-git-fedora-%OS_VERSION%.repo
+    # copr:
+    #   - pgdev/ghostty
+  install:
+    packages:
+      - docker-ce
+      - docker-ce-cli
+      - docker-compose-plugin
+      # - kde-connect
+      # - fish
+      # - ghostty-git
+      # - mako
+      - nautilus
+      - neovim
+      - niri
+      - tailscale
+      - vivaldi-stable
+  optfix:
+    - vivaldi
+  remove:
+    packages:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - android-tools
+      - gnome-themes-extra
+      - gnome-icon-theme
+      - paper-icon-theme
+      # - breeze-icon-theme
+      # - papirus-icon-theme
+      - sddm
+      - sddm-themes
+      - sddm-wayland-sway
+      - thunar-archive-plugin
+      - thunar-volman
+      - Thunar
+
+- type: systemd
+  system:
+    enabled:
+      - docker.service
+      - tailscaled
+      - keyd
+
+- type: default-flatpaks
+  notify: true # Send notification after install/uninstall is finished (true/false)
+  system:
+    # If no repo information is specified, Flathub will be used by default
+    install:
+      - org.mozilla.firefox
+    remove:
+      - org.gnome.Loupe
+      - org.gnome.eog
+  user: {} # Also add Flathub user repo, but no user packages
+
+- type: bling
+  install:
+    - 1password # install 1Password (stable) and `op` CLI tool
+
+- type: containerfile
+  snippets:
+    - RUN mkdir /nix
+
+- type: signing # this sets up the proper policy & signing files for signed images to work fully
+
