@@ -13,8 +13,8 @@ modules:
         - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         - https://copr.fedorainfracloud.org/coprs/yalter/niri-git/repo/fedora-%OS_VERSION%/yalter-niri-git-fedora-%OS_VERSION%.repo
-      # copr:
-      #   - pgdev/ghostty
+      copr:
+        - pgdev/ghostty
     install:
       packages:
         - docker-ce
@@ -22,7 +22,7 @@ modules:
         - docker-compose-plugin
         # - kde-connect
         # - fish
-        # - ghostty-git
+        - ghostty-git
         # - mako
         - nautilus
         - neovim
