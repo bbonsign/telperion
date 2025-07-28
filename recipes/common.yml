@@ -37,6 +37,7 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - android-tools
+        - dunst
         - gnome-themes-extra
         - gnome-icon-theme
         - paper-icon-theme
