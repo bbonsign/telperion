@@ -58,15 +58,15 @@ modules:
         - keyd
 
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
-      # If no repo information is specified, Flathub will be used by default
-      install:
-        - org.mozilla.firefox
-      remove:
-        - org.gnome.Loupe
-        - org.gnome.eog
-    user: {} # Also add Flathub user repo, but no user packages
+    configurations:
+      - notify: true # Send notification after install/uninstall is finished (true/false)
+        scope: system
+        # If no repo information is specified, Flathub will be used by default
+        install:
+          - org.mozilla.firefox
+        remove:
+          - org.gnome.Loupe
+          - org.gnome.eog
 
   - type: bling
     install:
