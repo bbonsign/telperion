@@ -28,6 +28,7 @@ modules:
         - niri
         - tailscale
         - vivaldi-stable
+        - NetworkManager-openvpn
     optfix:
       - vivaldi
     remove:
