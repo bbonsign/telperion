@@ -13,6 +13,7 @@ modules:
         - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         - https://copr.fedorainfracloud.org/coprs/yalter/niri-git/repo/fedora-%OS_VERSION%/yalter-niri-git-fedora-%OS_VERSION%.repo
+        - https://copr.fedorainfracloud.org/coprs/dsommers/openvpn3/repo/fedora-%OS_VERSION%/dsommers-openvpn3-fedora-%OS_VERSION%.repo
         # - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
     install:
       packages:
