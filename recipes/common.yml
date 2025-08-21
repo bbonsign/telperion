@@ -27,6 +27,7 @@ modules:
         - nautilus
         - neovim
         - niri
+        - openvpn3
         - tailscale
         - vivaldi-stable
         - NetworkManager-openvpn
