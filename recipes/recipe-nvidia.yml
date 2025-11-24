@@ -6,7 +6,7 @@ name: telperion-nvidia
 description: Custom image on top of Fedora Sway Atomic.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ghcr.io/wayblueorg/sway-nvidia
+base-image: ghcr.io/ghcr.io/wayblueorg/hyprland-nvidia-open
 image-version: 42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
