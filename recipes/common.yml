@@ -27,7 +27,9 @@ modules:
         # - mako
         - nautilus
         - neovim
-        - niri
+        - repo: yalter/niri-git
+          packages:
+            - niri
         - openvpn3
         - tailscale
         - vivaldi-stable
