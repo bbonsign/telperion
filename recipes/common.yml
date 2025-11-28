@@ -27,7 +27,7 @@ modules:
         # - mako
         - nautilus
         - neovim
-        - repo: yalter/niri-git
+        - repo: copr:copr.fedorainfracloud.org:yalter:niri-git.repo
           packages:
             - niri
         - openvpn3
