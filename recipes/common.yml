@@ -13,10 +13,9 @@ modules:
         - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         - https://copr.fedorainfracloud.org/coprs/dsommers/openvpn3/repo/fedora-%OS_VERSION%/dsommers-openvpn3-fedora-%OS_VERSION%.repo
-      repos:
-        copr:
-          enable:
-            - yalter/niri-git
+      copr:
+        enable:
+          - yalter/niri-git
     install:
       packages:
         - docker-ce
