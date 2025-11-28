@@ -12,9 +12,11 @@ modules:
         - https://download.docker.com/linux/fedora/docker-ce.repo
         - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-        - https://copr.fedorainfracloud.org/coprs/yalter/niri-git/repo/fedora-%OS_VERSION%/yalter-niri-git-fedora-%OS_VERSION%.repo
         - https://copr.fedorainfracloud.org/coprs/dsommers/openvpn3/repo/fedora-%OS_VERSION%/dsommers-openvpn3-fedora-%OS_VERSION%.repo
-        # - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
+      repos:
+        copr:
+          enable:
+            - yalter/niri-git
     install:
       packages:
         - docker-ce
@@ -53,9 +55,9 @@ modules:
         - thunar-volman
         - Thunar
 
-  - type: containerfile
-    snippets:
-      - RUN echo "priority=1" | sudo tee --append /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
+  # - type: containerfile
+  #   snippets:
+  #     - RUN echo "priority=1" | sudo tee --append /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 
   - type: systemd
     system:
