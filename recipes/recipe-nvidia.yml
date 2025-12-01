@@ -3,7 +3,7 @@
 # image will be published to ghcr.io/<user>/<name>
 name: telperion-nvidia
 # description will be included in the image's metadata
-description: Custom image on top of Fedora Sway Atomic.
+description: Custom image on top of Fedora Atomic.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ghcr.io/wayblueorg/hyprland-nvidia-open
