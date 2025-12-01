@@ -67,6 +67,8 @@ modules:
         - docker.service
         - tailscaled
         - keyd
+      disabled:
+        - sddm-boot.service
 
   - type: default-flatpaks
     configurations:
