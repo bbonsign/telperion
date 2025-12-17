@@ -35,6 +35,7 @@ modules:
         - tailscale
         - vivaldi-stable
         - NetworkManager-openvpn
+        - NetworkManager-tui
     optfix:
       - vivaldi
     remove:
