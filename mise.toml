@@ -1,0 +1,11 @@
+[tasks.status]
+alias = ["s", "st"]
+run = "rpm-ostree status"
+
+[tasks.build]
+alias = "b"
+run = "bluebuild build"
+
+[tasks.update]
+alias = "up"
+run = "rpm-ostree update"
