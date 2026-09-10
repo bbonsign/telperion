@@ -10,12 +10,12 @@ modules:
     repos:
       files:
         - https://download.docker.com/linux/fedora/docker-ce.repo
-        - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+        # - https://repo.vivaldi.com/archive/vivaldi-fedora.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         # - https://copr.fedorainfracloud.org/coprs/dsommers/openvpn3/repo/fedora-%OS_VERSION%/dsommers-openvpn3-fedora-%OS_VERSION%.repo
-      copr:
-        enable:
-          - yalter/niri-git
+      # copr:
+      #   enable:
+      #     - yalter/niri-git
     install:
       packages:
         - docker-ce
@@ -27,13 +27,13 @@ modules:
         # - mako
         - nautilus
         - neovim
-        - xwayland-satellite
-        - repo: copr:copr.fedorainfracloud.org:yalter:niri-git
-          packages:
-            - niri
+        # - xwayland-satellite
+        # - repo: copr:copr.fedorainfracloud.org:yalter:niri-git
+        #   packages:
+        #     - niri
         # - openvpn3
         - tailscale
-        - vivaldi-stable
+        # - vivaldi-stable
         - NetworkManager-openvpn
         - NetworkManager-tui
     optfix:
@@ -83,9 +83,9 @@ modules:
           - org.gnome.Loupe
           - org.gnome.eog
 
-  - type: bling
-    install:
-      - 1password # install 1Password (stable) and `op` CLI tool
+  # - type: bling
+  #   install:
+  #     - 1password # install 1Password (stable) and `op` CLI tool
 
   - type: containerfile
     snippets:
